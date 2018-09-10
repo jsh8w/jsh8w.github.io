@@ -12,20 +12,15 @@ safe: true
 
 # edit here to achieve your personal greatness
 url: http://jsh8w.github.io/
-baseurl: /
+baseurl:
 title: James Shaw - Software Engineer
 author: James Shaw
 description: Personal blog and CV
 avatar: profile.png
-email: yourname@email.com
-github: jsh8w # username
+github: jsh8w
 twitter: jsh8w
 linkedin: shawjames
-stackoverflow: username   #e.g: users/2735833/proton1h1
-#Comment out if you don't want disqus
-#disqus: username
-#google_analytics: UA-69391421-1
-
+stackoverflow: users/5032154/jsh8w
 
 # needed for travis-ci build
 exclude: [vendor]
