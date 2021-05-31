@@ -135,6 +135,8 @@ body {
 .social {
   padding-top: 12px;
   word-spacing: 25px;
+  margin: auto;
+  text-align: center;
 }
 .social h4 > a {
   color: #000000;
