@@ -10,7 +10,7 @@ body {
 }
 /* Wrapper for page content to push down footer */
 #wrap {
-  padding-bottom: 50px;	
+  padding-bottom: 50px;
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
@@ -157,14 +157,20 @@ body {
 .disqus {
   padding-bottom: 15px;
 }
-
 .blogpost{
   text-align: left;
   line-height: 30px;
   font-size: 18px;
 }
+.project-row {
+  padding-bottom: 15px;
+}
+.home-about {
+  text-align: left;
+  padding-top: 100px;
+}
 
-/* Footer 
+/* Footer
 -------------------------------------------------- */
 
 .footer {
@@ -180,5 +186,5 @@ div.footer{
 /*.footer {
   height: 50px;
   padding-bottom: 15px;
-  
+
 }*/
