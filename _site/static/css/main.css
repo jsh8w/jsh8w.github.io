@@ -6,7 +6,7 @@ body {
   background-color: #fff;
   font-family: 'Source Sans Pro', sans-serif;
   /* The html and body elements cannot have any padding or margin. */
-  border-top: 3px solid #27A822;
+  border-top: 3px solid #445391;
 }
 /* Wrapper for page content to push down footer */
 #wrap {
@@ -96,15 +96,21 @@ body {
   margin: 20px 0;
 }
 .container a {
-  color: #27A822;
+  color: #445391;
 }
 .container a:hover {
-  color: #267723;
+  color: #29335c;
 }
 .img-responsive {
  display: block;
  height: auto;
  max-width: 100%;
+}
+.img-app {
+ width: 60px;
+ height: 60px;
+ border-radius: 16px;
+ margin-right: 15px;
 }
 .panel-default h4 {
   text-align: left;
@@ -120,7 +126,7 @@ body {
   font-size: 15px;
 }
 .panel-default h4 a, h5 a {
-  color: #27A822;
+  color: #445391;
 }
 .panel-default h4 a:hover, h5 a:hover {
   color: #267723;
@@ -167,9 +173,17 @@ body {
 .project-row {
   padding-bottom: 15px;
 }
+.project-title-description {
+  display: inline-block;
+  vertical-align: middle;
+}
 .home-about {
   text-align: left;
   padding-top: 100px;
+}
+.my-apps-section-title {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 /* Footer
@@ -182,7 +196,7 @@ body {
 	color: #6b6b6b;
 }
 div.footer{
-  border-bottom: 5px solid #27A822;;
+  border-bottom: 5px solid #445391;;
 }
 /* Set the fixed height of the footer here */
 /*.footer {
