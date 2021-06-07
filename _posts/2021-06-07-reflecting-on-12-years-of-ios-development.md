@@ -1,25 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  
-    <title type="text" xml:lang="en">James Shaw | iOS Developer | iPhone, iPad, Apple Watch and Apple TV</title>
-    <link type="application/atom+xml" rel="self" href="http://localhost:3000/atom.xml"/>
-  
-  <link href="http://localhost:3000/"/>
-  <id>http://localhost:3000/</id>
-  <updated>2021-06-07T22:01:01Z</updated>
-  <author>
-    <name>James Shaw</name>
-    <email></email>
-  </author>
-  <rights type="text">Copyright © 2021 James Shaw. All rights reserved.</rights>
-  
-  <entry>
-  <title type="text">Reflecting on 12 Years of iOS Development</title>
-  <link rel="alternate" type="text/html" href="http://localhost:3000/reflecting-on-12-years-of-ios-development.html" />
-  <id>http://localhost:3000/reflecting-on-12-years-of-ios-development</id>
-  <published>2021-06-07T00:00:00Z</published>
-  <updated>2021-06-07T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p><img src="assets/images/reflecting_on_12_years_of_ios_development.jpg" alt="iOS" /></p>
+---
+layout: post
+title:  Reflecting on 12 Years of iOS Development
+tags:
+- iOS Development
+- Swift
+- SwiftUI
+- Objective-C
+- Indie Development
+---
+
+<img src="assets/images/reflecting_on_12_years_of_ios_development.jpg" alt="iOS">
 
 <p>As <a href="https://developer.apple.com/wwdc21/"><strong>WWDC 2021</strong></a> 🍎 is in full swing, it's hard to believe that iOS has been around for nearing 14 years. Somewhat as surprising is that I've been an iOS Developer for 12 of those!</p>
 
@@ -28,20 +18,20 @@
 <p>In this blog post, I want to discuss the biggest changes I've experienced during the last 12 years.</p>
 
 <h2>👨🏼‍💻 Out with Objective C, in with Swift</h2>
-<hr />
+<hr/>
 
 <p>Without doubt, the most significant change in iOS Development over the last 12 years was the introduction of Swift at WWDC 2014; and the move away from Objective-C. I, like many other iOS Developers was initially rather suspicious and cautious of this new kid on the block. This wasn't helped by the poor Xcode support, slow compile times and large number of breaking changes that early Swift versions suffered from. (The jump from Swift 2 to 3 was particularly painful!</p>
 
-<p>However, after 7 years of Swift, I ❤️ the language and vastly prefer it to Objective-C! I'm fairly certain that 99% of fellow iOS Developers agree.<p />   
+<p>However, after 7 years of Swift, I ❤️ the language and vastly prefer it to Objective-C! I'm fairly certain that 99% of fellow iOS Developers agree.<p/>   
 
 <h2>🎨 Building UI - XIBs, Storyboards, Auto Layout and SwiftUI</h2>
-<hr />
+<hr/>
 <p>As the variety of iOS devices has increased over the years, the complexity of building user interfaces to adapt to the different screen sizes has increased in turn. Initially, with few devices to support; building UIs <strong>programmatically to be pixel perfect</strong> was doable. But very quickly, as the number of devices increased, this approach became unsustainable and Apple introduced Auto Layout.</p>
 
 <p>This changed the game and made it far easier to build dynamic UIs and support different screen sizes. <strong>XIBs and Storyboards</strong> made an appearance to assist in building these UIs. And then most recently, <strong>SwiftUI</strong>; a user interface toolkit that lets us design apps in a declarative way.</p>
 
 <h2>🧠 Memory Management</h2>
-<hr />
+<hr/>
 <p>Before <strong>ARC (Automatic Reference Counting)</strong> was first introduced in October 2011, memory management in Objective-C was an entirely manual process. This was one of the biggest of pains for developers and no doubt led to a huge number of tedious bugs to try and resolve.</p>
 
 <p>If you're not familiar with the days before ARC; essentially whenever an instance of a class is instantiated, a strong reference to said class is created in memory. It was then on the developer to manually deallocate the reference when it was no longer needed. Failure to do so meant that your app contained all sorts of <strong>memory leaks and retain cycle pain</strong>.</p>
@@ -49,13 +39,13 @@
 <p>Thankfully since iOS 4.2, ARC automatically handles memory management at compile time and alleviates many a headache for developers.</p>
 
 <h2>📱 The World is going Mobile first</h2>
-<hr />
+<hr/>
 <p>Back in 2009, mobile apps were very much <strong>nice-to-haves</strong> for businesses with only the most forward thinking adopting them. Fast forward 12 years and mobile apps are now <strong>must-haves</strong> for businesses with an expectation from customers.</p>
 
 <p>Never has iOS Development been so <strong>relevant</strong> and in demand.</p>
 
 <h2>💰 Approaches to Monetisation</h2>
-<hr />
+<hr/>
 <p>Back in the day at the beginning of the App Store, monetising your app was very straightforward; users made a one-time up-front payment to use your software. Simple.</p>
 
 <p>However, developers quickly became conscious that users wanted to try their apps for free. This led to <strong>'Lite'</strong> versions; an entirely separate app available for free but with a limited functionality. This led to a rather cluttered and bloated App Store!</p>
@@ -65,19 +55,19 @@
 <p>The changes Apple have implemented have offered developers far more opportunity and variety to how they they can monetise their software. A win for Developers, a win for Users; and a win for Apple.</p>
 
 <h2>💸 There's still Money to be made</h2>
-<hr />
+<hr/>
 <p>When I launched my first app on the App Store back in December 2009, there were <strong>~100k apps</strong> on the iOS App Store. As of today (06/06/2021), there are <strong>~2.2 million</strong>. Hence, the competition is far higher. These two simple stats mean there is no doubt that it is far more difficult to make money from iOS apps in 2021 than it was in 2009.</p>
 
 <p>However, that's not to say that there isn't still the opportunity to make good money on the App Store. If your app solves a problem, is executed and marketed well; then there's no reason it can't be successful. Add in the changes to monetising apps as mentioned above and there's no reason why you can't reap the financial rewards of your efforts.</p>
 
 <h2>🍎 Growth of the Apple Ecosystem</h2>
-<hr />
+<hr/>
 <p>Over the last 12 years, the Apple Ecosystem has grown massively. As of 2021, Apple say there are more than <a href="https://www.theverge.com/2021/1/27/22253162/iphone-users-total-number-billion-apple-tim-cook-q1-2021">1.65 billion active iOS devices</a>! That means the market for iOS Developers to target is one of the biggest in the world. Whilst the competition for apps is higher than ever; the number of potential customers is also higher than ever.</p>
 
 <p>Back in 2009, Developers could also only target iPhone and iPod Touch. Now in 2021, with the release of iPad, Apple Watch and Apple TV; the scope and breadth of apps developers can build is wider than ever.</p>
 
 <h2>🙋🏼‍♂️ The Dev Community</h2>
-<hr />
+<hr/>
 <p>Back in 2009, iOS Developers were relatively few and far between. Only the <strong>iPhone Dev SDK Forum</strong> was a reasonably strong source of community and knowledge.</p>
 
 <p>These days; search for the 'iOS' tag on <a href="https://stackoverflow.com/questions/tagged/ios">Stack Overflow</a> and you will currently be returned 656,724 related questions! Add to that the numerous blogs, podcasts and YouTube channels related to iOS Development and the wealth of knowledge available now is fantastic.</p>
@@ -85,12 +75,5 @@
 <p>Twitter also provides an extremely vibrant iOS Developer community. Being able to speak and interact with your fellow developers really helps with motivation, drive; and just makes the whole experience a lot more fun.</p>
 
 <h2>🔚 To End...</h2>
-<hr />
+<hr/>
 <p>To say that iOS Development has changed drastically over the last 12 years is a massive understatement. And I for one can't wait to see where iOS Development goes in the next 12 years! 🍿</p>
-</p>
- ]]></content>
-</entry>
-
-
-
-</feed>
