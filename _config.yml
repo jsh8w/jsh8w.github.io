@@ -11,18 +11,28 @@ plugins:
 port: 3000
 safe: true
 
-
-# edit here to achieve your personal greatness
-url: http://jsh8w.github.io/
+url: http://shaw-james.com
 baseurl:
 title: James Shaw | iOS Developer | iPhone, iPad, Apple Watch and Apple TV
 author: James Shaw
-description: Personal blog and CV
 avatar: profile.png
 github: jsh8w
 twitter: jsh8w
 linkedin: shawjames
 stackoverflow: users/5032154/jsh8w
 
-# needed for travis-ci build
+# SEO
+description: I'm a Software Engineer in York. I have built software for all Apple platforms (iOS, iPadOS, macOS, watchOS and tvOS) since 2009 using Swift and Objective-C.
+twitter:
+  username: jsh8w
+  card: Lead Software Engineer, building Mobile since 2009. BEng Computer Science, University of York. Passionate about sports, cars and mental health.
+logo: /static/img/profile.png
+social:
+  name: James Shaw
+  links:
+    - https://twitter.com/jsh8w
+    - https://stackoverflow.com/users/5032154/jsh8w
+    - https://www.linkedin.com/in/shawjames
+    - https://github.com/jsh8w
+
 exclude: [vendor]
