@@ -1,180 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  
-    <title type="text" xml:lang="en">James Shaw | iOS Developer | iPhone, iPad, Apple Watch</title>
-    <link type="application/atom+xml" rel="self" href="http://localhost:3000/atom.xml"/>
-  
-  <link href="http://localhost:3000/"/>
-  <id>http://localhost:3000/</id>
-  <updated>2021-08-21T11:09:46Z</updated>
-  <author>
-    <name>James Shaw</name>
-    <email></email>
-  </author>
-  <rights type="text">Copyright © 2021 James Shaw. All rights reserved.</rights>
-  
-  <entry>
-  <title type="text">Reflecting on 12 Years of iOS Development</title>
-  <link rel="alternate" type="text/html" href="http://localhost:3000/reflecting-on-12-years-of-ios-development.html" />
-  <id>http://localhost:3000/reflecting-on-12-years-of-ios-development</id>
-  <published>2021-06-07T00:00:00Z</published>
-  <updated>2021-06-07T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p><img src="assets/images/reflecting_on_12_years_of_ios_development.jpg" alt="iOS" /></p>
+---
+layout: post
+title:  It's Okay to not be Okay
+tags:
+- Anxiety
+- Mental Health
+- Panic Attacks
+- Anxiety Disorder
+- Anxiety Attacks
+---
 
-<p>As <a href="https://developer.apple.com/wwdc21/"><strong>WWDC 2021</strong></a> 🍎 is in full swing, it's hard to believe that iOS has been around for nearing 14 years. Somewhat as surprising is that I've been an iOS Developer for 12 of those!</p>
-
-<p>I first began my foray into iOS Development back in 2009 with my first app being released in December that year. Since then, a huge amount has changed on the platform with Apple vastly developing their technology and giving developers more and more opportunity to build cool, innovative apps.</p>
-
-<p>In this blog post, I want to discuss the biggest changes I've experienced during the last 12 years.</p>
-
-<h2>👨🏼‍💻 Out with Objective C, in with Swift</h2>
-<hr />
-
-<p>Without doubt, the most significant change in iOS Development over the last 12 years was the introduction of Swift at WWDC 2014; and the move away from Objective-C. I, like many other iOS Developers was initially rather suspicious and cautious of this new kid on the block. This wasn't helped by the poor Xcode support, slow compile times and large number of breaking changes that early Swift versions suffered from. (The jump from Swift 2 to 3 was particularly painful!</p>
-
-<p>However, after 7 years of Swift, I ❤️ the language and vastly prefer it to Objective-C! I'm fairly certain that 99% of fellow iOS Developers agree.<p />   
-
-<h2>🎨 Building UI - XIBs, Storyboards, Auto Layout and SwiftUI</h2>
-<hr />
-<p>As the variety of iOS devices has increased over the years, the complexity of building user interfaces to adapt to the different screen sizes has increased in turn. Initially, with few devices to support; building UIs <strong>programmatically to be pixel perfect</strong> was doable. But very quickly, as the number of devices increased, this approach became unsustainable and Apple introduced Auto Layout.</p>
-
-<p>This changed the game and made it far easier to build dynamic UIs and support different screen sizes. <strong>XIBs and Storyboards</strong> made an appearance to assist in building these UIs. And then most recently, <strong>SwiftUI</strong>; a user interface toolkit that lets us design apps in a declarative way.</p>
-
-<h2>🧠 Memory Management</h2>
-<hr />
-<p>Before <strong>ARC (Automatic Reference Counting)</strong> was first introduced in October 2011, memory management in Objective-C was an entirely manual process. This was one of the biggest of pains for developers and no doubt led to a huge number of tedious bugs to try and resolve.</p>
-
-<p>If you're not familiar with the days before ARC; essentially whenever an instance of a class is instantiated, a strong reference to said class is created in memory. It was then on the developer to manually deallocate the reference when it was no longer needed. Failure to do so meant that your app contained all sorts of <strong>memory leaks and retain cycle pain</strong>.</p>
-
-<p>Thankfully since iOS 4.2, ARC automatically handles memory management at compile time and alleviates many a headache for developers.</p>
-
-<h2>📱 The World is going Mobile first</h2>
-<hr />
-<p>Back in 2009, mobile apps were very much <strong>nice-to-haves</strong> for businesses with only the most forward thinking adopting them. Fast forward 12 years and mobile apps are now <strong>must-haves</strong> for businesses with an expectation from customers.</p>
-
-<p>Never has iOS Development been so <strong>relevant</strong> and in demand.</p>
-
-<h2>💰 Approaches to Monetisation</h2>
-<hr />
-<p>Back in the day at the beginning of the App Store, monetising your app was very straightforward; users made a one-time up-front payment to use your software. Simple.</p>
-
-<p>However, developers quickly became conscious that users wanted to try their apps for free. This led to <strong>'Lite'</strong> versions; an entirely separate app available for free but with a limited functionality. This led to a rather cluttered and bloated App Store!</p>
-
-<p>Apple became savvy to this and introduced in-app purchases; a whole new opportunity for indie developers to monetise their apps. Gone went the Lite versions and in came the free trials and <strong>Freemium</strong> monetisation models. Then at WWDC 2016, Apple introduced the ability for developers to offer auto-renewable subscriptions and with them, an entirely new avenue for developers to charge for their apps.</p>
-
-<p>The changes Apple have implemented have offered developers far more opportunity and variety to how they they can monetise their software. A win for Developers, a win for Users; and a win for Apple.</p>
-
-<h2>💸 There's still Money to be made</h2>
-<hr />
-<p>When I launched my first app on the App Store back in December 2009, there were <strong>~100k apps</strong> on the iOS App Store. As of today (06/06/2021), there are <strong>~2.2 million</strong>. Hence, the competition is far higher. These two simple stats mean there is no doubt that it is far more difficult to make money from iOS apps in 2021 than it was in 2009.</p>
-
-<p>However, that's not to say that there isn't still the opportunity to make good money on the App Store. If your app solves a problem, is executed and marketed well; then there's no reason it can't be successful. Add in the changes to monetising apps as mentioned above and there's no reason why you can't reap the financial rewards of your efforts.</p>
-
-<h2>🍎 Growth of the Apple Ecosystem</h2>
-<hr />
-<p>Over the last 12 years, the Apple Ecosystem has grown massively. As of 2021, Apple say there are more than <a href="https://www.theverge.com/2021/1/27/22253162/iphone-users-total-number-billion-apple-tim-cook-q1-2021">1.65 billion active iOS devices</a>! That means the market for iOS Developers to target is one of the biggest in the world. Whilst the competition for apps is higher than ever; the number of potential customers is also higher than ever.</p>
-
-<p>Back in 2009, Developers could also only target iPhone and iPod Touch. Now in 2021, with the release of iPad, Apple Watch and Apple TV; the scope and breadth of apps developers can build is wider than ever.</p>
-
-<h2>🙋🏼‍♂️ The Dev Community</h2>
-<hr />
-<p>Back in 2009, iOS Developers were relatively few and far between. Only the <strong>iPhone Dev SDK Forum</strong> was a reasonably strong source of community and knowledge.</p>
-
-<p>These days; search for the 'iOS' tag on <a href="https://stackoverflow.com/questions/tagged/ios">Stack Overflow</a> and you will currently be returned 656,724 related questions! Add to that the numerous blogs, podcasts and YouTube channels related to iOS Development and the wealth of knowledge available now is fantastic.</p>
-
-<p>Twitter also provides an extremely vibrant iOS Developer community. Being able to speak and interact with your fellow developers really helps with motivation, drive; and just makes the whole experience a lot more fun.</p>
-
-<h2>🔚 To End...</h2>
-<hr />
-<p>To say that iOS Development has changed drastically over the last 12 years is a massive understatement. And I for one can't wait to see where iOS Development goes in the next 12 years! 🍿</p>
-</p>
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">Helping Someone Experiencing a Panic Attack</title>
-  <link rel="alternate" type="text/html" href="http://localhost:3000/helping-someone-experiencing-a-panic-attack.html" />
-  <id>http://localhost:3000/helping-someone-experiencing-a-panic-attack</id>
-  <published>2019-11-21T00:00:00Z</published>
-  <updated>2019-11-21T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p><img src="assets/images/helping_someone_experiencing_a_panic_attack.jpg" alt="Panic Attack support" /></p>
-
-<p>(Updated 20/08/2021: This post was originally shared on Medium, <a href="https://medium.com/@jamesshaw95/helping-someone-experiencing-a-panic-attack-5c09f41a1a4">Helping Someone Experiencing a Panic Attack</a>). I've also added it to my blog.</p>
-
-<h2>👨‍👩‍👧‍👦 The dos and don’ts for friends and families with a loved one battling panic attacks.</h2>
-<hr />
-
-<p>As a long term sufferer of <strong>Generalised Anxiety Disorder</strong>, I’ve been extremely lucky to have extremely supportive family and friends around me. The manner in which your nearest and dearest relate to your condition really makes a massive difference, and I can’t imagine having to battle an anxiety disorder without the support of others.</p>
-
-<p>One of the most common symptoms of anxiety disorders is <strong>panic attacks</strong>. I have experienced many panic attacks over the years and they really aren’t pleasant in the slightest. Panic attacks occur when a person suffers from an acute burst of anxiety which then causes extremely intense mental and physical symptoms. Whilst <strong>panic attacks can be of different severities</strong>, the most common symptoms include:</p>
-
-<ul>
-  <li>Nausea and sickness.</li>
-  <li>Breathing difficulties.</li>
-  <li>Hyperventilating.</li>
-  <li>Irrational thinking and not being able to coherently and logically function.</li>
-  <li>Sweaty palms, dry mouth and tight chest.</li>
-  <li>Heart palpitations.</li>
-  <li>The seemingly uncontrollable feeling of being trapped.</li>
-</ul>
-
-<p>From personal experience, given the intense nature of these symptoms, I’ve always been really concerned about <strong>experiencing a panic attack in public</strong> and with other people. I strongly believe that this is the case with many other fellow panic attack sufferers. It’s therefore really reassuring and comforting to know, that the people you spend most time with are going to be understanding, empathetic and show no judgement if and when you experience a panic attack.</p>
-
-<p>The list before is a non-exhaustive list of things to do and not do when someone suffers from a panic attack.</p>
-
-<h2>✅ Do</h2>
-<hr />
-
-<p><strong>✅ Do remind the person that their symptoms are only temporary.</strong> Panic attacks are short bursts of intense physical symptoms but will never last forever. In fact, from personal experience, I’ve never had a panic attack last longer than 45 minutes. For someone in the middle of a panic attack, it’s extremely comforting to know that their symptoms will soon subside to a more manageable level.</p>
-
-<p><strong>✅ Do offer to stay with the person or let them be on their own if they wish.</strong> All panic attack sufferers are different; some prefer to be in the company of others to help comfort them, whilst others prefer just to be on their own to calm down. Gently suggest both options and tell the person you are perfectly happy to accommodate either.</p>
-
-<p><strong>✅ Do encourage the person to focus on their breathing.</strong> When someone is experiencing a panic attack, it is likely their breathing is fast and short. This unintentionally results in an increased heart rate and in turn activates the person’s “fight or flight” mode. This heightened sense of awareness results in even worse physical symptoms. The key to counteract this is to intentionally make slow, deep breaths through the diaphragm and really focus on the physical sensations of the stomach expanding and contracting. Encourage the person to breathe in for 6 seconds, hold for 4, and then breathe out for 6.</p>
-
-<p><strong>✅ Do offer to get the person a glass of water.</strong> Similar to slow, deep breathing, drinking a glass of water gives the person an opportunity to really focus on the sensations of taste and drinking rather than their physical symptoms.</p>
-
-<p><strong>✅ Do remind the person that they can do whatever they feel they need do.</strong> The last thing the person wants is to feel obliged to stay in the situation they are currently in. Offer them an “escape route” to remove themselves from the current situation. For example, if you’re in a crowded restaurant, offer to get some fresh air outside or even accompany them home. But most important of all, don’t pressure them into doing something they don’t want to do.</p>
-
-<p><strong>✅ Do message or call the person to check if they’re okay.</strong> Later the same day or perhaps the next, get in touch with the person to see how they’re doing. From personal experience, it could be that the person is feeling embarrassed and ashamed of what happened. They may therefore be hesitant of getting in touch so messaging them first and sending them good wishes is a big thing to alleviate their worries. Suggest hanging out with them too as soon as they’re feeling up to it.</p>
-
-<p><strong>✅ Do remind the person how much you enjoy hanging out with them.</strong> Many anxiety sufferers are worried about having panic attacks in public as they’re not sure how people will react. Gently remind them that having an anxiety disorder doesn’t define who they are, and that you love hanging out with them no matter if their anxiety is visible or not.</p>
-
-<p><strong>✅ Do show empathy and understanding.</strong> Showing empathy and understanding is crucial in letting the person know that you’re there to support them and help them through their anxiety battles.</p>
-
-<h2>❌ Don't</h2>
-<hr />
-
-<p><strong>❌ Don’t tell the person that they’ve got nothing to be anxious about.</strong> Whilst it may seem reassuring, telling the person they have nothing to worry about is not helpful. The rational part of the person’s brain is likely well aware that they have nothing to be anxious about. The person is likely very frustrated that they’re feeling anxious when deep down they know that they have no reason to be. You confirming this is only likely to add to the frustration.</p>
-
-<p><strong>❌ Don’t be frustrated or irritated with the person.</strong> Whilst this my seem extremely obvious, the last thing the person needs is to see you being frustrated and not understanding. They didn’t wake up in the morning and decide to have a panic attack for a laugh; and they’re certainly not in control of it happening. Personally, my biggest concern about having a panic attack in public was being an inconvenience to others. Showing frustration just confirms to the person that you think they’re an inconvenience. Furthermore to be quite frank, someone showing frustration to someone having a panic attack is not someone I’d like to spend time with.</p>
-
-<p><strong>❌ Don’t ask the person why they are anxious.</strong> The chances are that the person themselves doesn’t know. Asking the question during the panic attack could lead to the person becoming more anxious as they can’t work out why.</p>
-
-<p><strong>❌ Don’t remain silent pretending everything is okay.</strong> This is only going to make the person feel like you don’t understand how they’re feeling and you’re not accepting how they feel.</p>
-
-<h2>🔚 Conclusion</h2>
-<hr />
-
-<p>So there it is; a simple list of dos and don’ts for those in the company of someone experiencing a panic attack. Whilst this list is by no means exhaustive, the things listed really help me when I’m experiencing a panic attack.</p>
-
-<p>Lastly, it is hugely important that the person suffering from a panic attack is within the company of people that they truly feel comfortable with. Whilst it may not seem like much, the simple act of gently saying that the symptoms won’t last forever can be really comforting.</p>
- ]]></content>
-</entry>
-
-
-  <entry>
-  <title type="text">It's Okay to not be Okay</title>
-  <link rel="alternate" type="text/html" href="http://localhost:3000/its-okay-to-not-be-okay.html" />
-  <id>http://localhost:3000/its-okay-to-not-be-okay</id>
-  <published>2018-12-02T00:00:00Z</published>
-  <updated>2018-12-02T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p><img src="assets/images/its_okay_to_not_be_okay.png" alt="Anxiety Disorder" /></p>
+<img src="assets/images/its_okay_to_not_be_okay.png" alt="Anxiety Disorder">
 
 <p>(Updated 21/08/2021: I originally shared this post on Medium in 2018, <a href="https://medium.com/@jamesshaw95/its-okay-to-not-be-okay-619a22444149">It's Okay to not be Okay</a>). I've also added it to my blog.</p>
 
 <h2>👋🏻 Introduction</h2>
-<hr />
+<hr/>
 
 <p>Hello 👋🏻, I’m James! I’m 23, live in York and work as a Software Engineer. I’ve struggled with Generalised Anxiety Disorder for as long as I can remember. It’s been a big part of my life but I’ve always been very guarded about it; partly due to embarrassment, partly due to not knowing how to deal with it and partly due to not knowing how people would react to it. This has made it really hard to talk but over time I’ve come to accept that it’s part of who I am, and I shouldn’t be ashamed about it. 😊</p>
 
@@ -185,7 +25,7 @@
 <p>In this first post, I think it makes sense to go through the first 23 years of my life, talk about everything I’ve experienced with anxiety and get it out there! Being a relatively introverted, British guy 🇬🇧; I don’t find talking about myself particularly easy. I feel pretty uncomfortable about some of stuff I’m going to write about in this post and am cringing at the the number of times I’m going to have to write ‘I’! But I think it’s the right thing to do. It’s a bit of an essay, so get your popcorn ready, here we go!</p>
 
 <h2>🚌 Early Years and Primary School</h2>
-<hr />
+<hr/>
 
 <p>I was really lucky to have a fantastic start in life! 🙌🏻 I was born in Scarborough (affectionally known as Scarbados! ☀️) and spent the first 18 years of my life living there. I am extremely blessed to have been brought up by the most loving, caring family I could possibly wish for and they have given me everything. I am incredibly grateful for everything they have done for me.</p>
 
@@ -196,7 +36,7 @@
 <p>I left primary school with really happy memories and was excited to start secondary school.</p>
 
 <h2>📚 Secondary School</h2>
-<hr />
+<hr/>
 
 <p>I started secondary school with much excitement but was immediately struck by how vastly different it was to my primary school. My primary school had been extremely friendly and welcoming, but somehow my new school felt entirely the opposite. I made some good friends but there were also a fair few people I didn’t see eye to eye with. 😬</p>
 
@@ -217,7 +57,7 @@
 <p>My time at secondary school has had a profound impact on my mental health and I can link many of my more recent struggles back to these years. By the end of Year 11, I had become a shy, withdrawn teenager with a huge lack of self-confidence; the complete opposite to what I was at primary school and this upset me greatly. 😢 It was a tough time but it made me develop a resilience to always hang in there when the going got tough. I was ready for a fresh start so was excited to start sixth form and be back with all my primary school friends.</p>
 
 <h2>📘 Sixth Form</h2>
-<hr />
+<hr/>
 
 <p>Once I’d got past the initial anxiety of starting sixth form, I settled in really well and it was fantastic to be back with my primary school friends. In turn, my anxiety levels dropped, my self-confidence increased and I found myself quite enjoying life again. However, the background noise of anxiety was still there because it had become such a habit during secondary school.
 My subjects at sixth form were Maths, Physics, Computing and Economics; and it was great to finally do work that I actually found interesting. However, as the workload ramped up, so did my anxiety and it started to become a major problem again. My subjects were pretty exam intensive so during exam seasons, where I would spend pretty much all my time revising, my anxiety really flared up. I started to experience panic attacks again and it was difficult to focus on work.</p>
@@ -227,7 +67,7 @@ My subjects at sixth form were Maths, Physics, Computing and Economics; and it w
 <p>From there on, sixth form went extremely quickly and it’s all a bit of a blur. I worked really hard and managed to get the grades I needed to get into York to study Computer Science. It was a huge relief and for one of the first times, I was actually proud of what I had achieved. Whilst I was extremely anxious about going to University, I saw it as another fresh start and was optimistic that my anxiety would improve once I got there. 🙏🏻</p>
 
 <h2>🎓 University</h2>
-<hr />
+<hr/>
 
 <p>As expected, I was extremely nervous about going to University. Moving away from home to a new city, by yourself, for the first time is a big deal for anyone, let alone someone with an anxiety disorder. However, I had heard many times that University would be “the best years of your life” and I was determined to give it shot. After all, maybe it would be the answer to my anxiety problems. I grit my teeth and forced myself to go.</p>
 
@@ -248,7 +88,7 @@ Before my final exam season, I again recognised that I needed some help so went 
 By the end of uni, I was in a pretty bad way so took the summer off to clear my head and try and sort myself out. I recognised I couldn’t go on like I was, so decided to prioritise my mental health above everything else and try to reduce my anxiety levels to a more manageable level once and for all.</p>
 
 <h2>🙋🏼‍♂️ Today and the Future</h2>
-<hr />
+<hr/>
 
 <p>Since graduating two years ago, my anxiety has improved massively and I am really starting to enjoy life again. 🙌🏻 In the last six months especially, I have started to feel bursts of happiness and excitement that I haven’t truly felt since I was 11 years old! I’ve put a lot of work into achieving this and am now starting to reap the rewards of my efforts. By making changes to my lifestyle, behaviour, diet; forcing myself to be exposed to situations that make me anxious, and regularly practicing meditation and mindfulness 🧘🏼, I am beginning to feel like my old self. It’s the strangest sensation that I can’t really describe, but it feels like I’m being reacquainted with an old friend that’s been missing for many years. The changes that I’ve made have all been relatively minor, but they’ve made a huge difference. I will go into much more detail about these in a future blog post.</p>
 
@@ -275,9 +115,3 @@ By the end of uni, I was in a pretty bad way so took the summer off to clear my 
 <p>To all those that have helped me over the years, I offer my sincere thanks. I am incredibly lucky to have had such supportive family and friends around me and I don’t know what I would have done without them. When suffering with mental illness, small things often make a big difference; and when someone goes out of their way to help you, it really means a great deal. Everyone has been amazing but I would like to say particular thanks to my Mum, Dad and Sister. I am incredibly grateful for all their love, support and encouragement they have given me over the years. I know it can’t have been easy for them watching me suffer, but they have been truly incredible in helping me come through my biggest battle.</p>
 
 <p>I’m not ashamed to admit that there’s been a few tears writing this; such is the journey I’ve been on, and the sheer relief I feel of finally being able to talk about it. 🥲 After 12 years of bottling this up, it feels really good to be open about it! 😊</p>
- ]]></content>
-</entry>
-
-
-
-</feed>
