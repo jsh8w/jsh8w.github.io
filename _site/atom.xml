@@ -6,13 +6,151 @@
   
   <link href="http://localhost:3000/"/>
   <id>http://localhost:3000/</id>
-  <updated>2021-08-21T11:55:33Z</updated>
+  <updated>2021-08-22T15:59:51Z</updated>
   <author>
     <name>James Shaw</name>
     <email></email>
   </author>
   <rights type="text">Copyright © 2021 James Shaw. All rights reserved.</rights>
   
+  <entry>
+  <title type="text">Xcode Tips and Tricks - Using Sourcery for Project Secrets</title>
+  <link rel="alternate" type="text/html" href="http://localhost:3000/using-sourcery-to-handle-secrets-and-environment-variables-in-xcode.html" />
+  <id>http://localhost:3000/using-sourcery-to-handle-secrets-and-environment-variables-in-xcode</id>
+  <published>2021-08-22T00:00:00Z</published>
+  <updated>2021-08-22T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p><img src="assets/images/xcode_sourcery.jpg" alt="Xcode 12 - Sourcery" /></p>
+
+<h2>⁉️ The Problem</h2>
+<hr />
+
+<p>Environment Variables (or Project Secrets) are present in the vast majority of software projects. Whether they be <strong>API Keys, Passwords, Tokens</strong> or other sensitive information; they should <strong>never</strong> be pushed to an unencrypted remote repository. That being said, all too often, this is not the case and sensitive information finds its way into unencrypted repos. 😬</p>
+
+<p>This is a big problem, particularly when we start to think about CI/CD pipelines too. 🤔 However, fear not! In this blog post, we'll look at this problem in an Xcode specific context and how we can avoid sensitive information being checked into source control.</p>
+
+<h2>✅ The Solution</h2>
+<hr />
+
+<p>Our goal here is to pass the environment variables into our project at build time; and then for our build process to generate a <code class="language-plaintext highlighter-rouge">.swift</code> file containing our secrets that can be used within the codebase. The solution has 3 main steps; <strong>Bash Script</strong>, <strong>Xcode Injection</strong> and <strong>Swift codegen</strong>. Lets look at each step in turn.</p>
+
+<h4>1. 🔨 Bash Script</h4>
+<hr />
+
+<p>First let’s create a file named <code class="language-plaintext highlighter-rouge">env-vars.sh</code> which contains the environment variables we need to use in our project. For example:</p>
+<div class="spacer-code-block" />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export EXAMPLE_API_KEY=ABCDEF123456
+export EXAMPLE_PASSWORD=PASSWORD
+</code></pre></div></div>
+
+<p class="figure"><i>Example env-vars file.</i></p>
+
+<p>We’ll add this into the root directory of our Xcode project and also add it to our <code class="language-plaintext highlighter-rouge">.gitignore</code> to avoid the file being committed to source control.</p>
+
+<h4>2. 💉 Xcode Injection</h4>
+<hr />
+
+<p>Once we’ve created our <code class="language-plaintext highlighter-rouge">env-vars.sh</code> file, we need to make these variables available to Xcode and our Swift code. To do this, we’ll use a combination of build run scripts and a Swift codegen tool called <a href="https://github.com/krzysztofzablocki/Sourcery">Sourcery</a>.</p>
+
+<p>First, lets install Sourcery via CocoaPods. To do this, add <code class="language-plaintext highlighter-rouge">pod 'Sourcery'</code> to your <code class="language-plaintext highlighter-rouge">Podfile</code> before running <code class="language-plaintext highlighter-rouge">pod install</code> to install the dependency. Once installed, we’ll head into Xcode and open the ‘Build Phases’ tab within our example app target. Here we’ll create a new ‘Run Script’ that will run each time our target builds.</p>
+
+<p>(<strong>Note:</strong> This script must be added before the ‘Compile Sources’ script for reasons we’ll come to).</p>
+
+<p><img class="img-blogpost" src="assets/images/sourcery_run_script.png" alt="Sourcery Run Script Magic" /></p>
+<p class="figure"><i>Adding a new run script into Build Phases</i></p>
+
+<p>Below is the script used. Each time a new variable is added to our <code class="language-plaintext highlighter-rouge">env-vars.sh</code> file; the script will need to be updated to parse out the variable.</p>
+<div class="spacer-code-block" />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if [ -f ./env-vars.sh ]
+then
+source ./env-vars.sh
+fi
+
+${PODS_ROOT}/Sourcery/bin/sourcery --templates ./Swift-Music/Helpers/ --output ./Swift-Music/Helpers/ --sources ./Swift-Music/ --args example_api_key=$EXAMPLE_API_KEY,example_password=$EXAMPLE_PASSWORD
+</code></pre></div></div>
+
+<p class="figure"><i>Example run script.</i></p>
+
+<p>In a nutshell, the script will source our <code class="language-plaintext highlighter-rouge">env-vars.sh</code> file, parse out each environment variable before using Sourcery to do its magic and generate our Swift secrets file ✨.</p>
+
+<h4>3. 💻 Swift codegen</h4>
+<hr />
+
+<p>You’ll notice our run script makes reference to a <code class="language-plaintext highlighter-rouge">--templates</code> argument. This directory requires a <code class="language-plaintext highlighter-rouge">.stencil</code> template file to be present which Sourcery will use to generate our <code class="language-plaintext highlighter-rouge">.swift</code> file containing our environment variables. We’ll create and name this file <code class="language-plaintext highlighter-rouge">APIConfig.stencil</code> so that <code class="language-plaintext highlighter-rouge">APIConfig.generated.swift</code> is generated.</p>
+
+<div class="spacer-code-block" />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//
+//  APIConfig.swift
+//  Swift-Music
+//
+//  Created by James Shaw on 21/08/2021.
+//  Copyright © 2021 James Shaw. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+public struct APIConfig {
+  static let apiKey = "{{ argument.example_api_key }}"
+  static let password = "{{ argument.example_password }}"
+}
+</code></pre></div></div>
+
+<p class="figure"><i>Example APIConfig.stencil file.</i></p>
+
+<p>Now, build the project (⌘+B) once so that our <code class="language-plaintext highlighter-rouge">APIConfig.generated.swift</code> file gets generated like the example below. 🚀</p>
+
+<div class="spacer-code-block" />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Generated using Sourcery 0.15.0 — https://github.com/krzysztofzablocki/Sourcery
+// DO NOT EDIT
+
+//
+//  APIConfig.swift
+//  Swift-Music
+//
+//  Created by James Shaw on 21/08/2021.
+//  Copyright © 2021 James Shaw. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+struct APIConfig {
+  static let apiKey = "ABCDEF123456"
+  static let password = "PASSWORD"
+}
+</code></pre></div></div>
+<p class="figure"><i>Example APIConfig.generated.swift file.</i></p>
+
+<p>Sourcery will add the generated file into the directory passed as the <code class="language-plaintext highlighter-rouge">--output</code> argument in our build script. Once we drag the file from Finder into our Xcode project, we’ll be able to access the variables from inside our source code. 🎉</p>
+
+<div class="spacer-code-block" />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+let client = APIClient(key: APIConfig.apiKey)
+...
+</code></pre></div></div>
+<div class="spacer-code-block" />
+
+<p>Now given this file contains all our secrets, we’ll need to make sure it’s added to our <code class="language-plaintext highlighter-rouge">.gitignore</code> too. The file will also need to be added to the ‘Compile Sources’ and this is the reason why our build script needs to run first. 👍🏻</p>
+
+<div class="spacer-code-block" />
+
+<p><strong>PS: Please do make sure your <code class="language-plaintext highlighter-rouge">.generated.swift</code> and <code class="language-plaintext highlighter-rouge">env-vars.sh</code> files get added to your <code class="language-plaintext highlighter-rouge">.gitignore</code> so your secrets don’t accidentally end up in your repo 😅.</strong></p>
+
+<h2>🔚 Wrapping Up...</h2>
+<hr />
+
+<p>So there we have it, a simple way to generate environment variables or project secrets in Xcode whilst keeping them out of source control. It's a really important tool and one that becomes even more powerful when building with a CI/CD pipeline. 🔁 Perhaps I'll cover this in a future blog post.</p>
+
+<p>Thanks for reading my post! If you have any questions, feel free to contact me on Twitter <a href="https://twitter.com/jsh8w">@jsh8w</a>.</p>
+ ]]></content>
+</entry>
+
+
   <entry>
   <title type="text">Reflecting on 12 Years of iOS Development</title>
   <link rel="alternate" type="text/html" href="http://localhost:3000/reflecting-on-12-years-of-ios-development.html" />

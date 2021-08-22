@@ -198,9 +198,22 @@ body {
 .label-success {
   background-color: #445391;
 }
-
 h1 {
   padding-bottom: 50px;
+}
+h4 {
+  padding-top: 40px;
+}
+.figure {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.spacer-code-block {
+  padding-top: 30px;
+}
+.img-blogpost {
+  padding-top: 30px;
+  padding-bottom: -20px;
 }
 
 /* Footer
