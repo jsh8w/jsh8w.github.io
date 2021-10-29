@@ -112,6 +112,13 @@ body {
  border-radius: 16px;
  margin-right: 15px;
 }
+.img-book-banner {
+ border-radius: 12px;
+ height: auto;
+ max-width: 100%;
+ margin-bottom: 20px;
+ margin-top: 20px;
+}
 .panel-default h4 {
   text-align: left;
   line-height: 24px;
