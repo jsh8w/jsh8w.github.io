@@ -6,12 +6,12 @@
   
   <link href="http://localhost:3000/"/>
   <id>http://localhost:3000/</id>
-  <updated>2021-12-02T22:07:42Z</updated>
+  <updated>2023-06-18T21:57:27Z</updated>
   <author>
     <name>James Shaw</name>
     <email></email>
   </author>
-  <rights type="text">Copyright © 2021 James Shaw. All rights reserved.</rights>
+  <rights type="text">Copyright © 2023 James Shaw. All rights reserved.</rights>
   
   <entry>
   <title type="text">Xcode Tips and Tricks - Using Sourcery for Project Secrets</title>
@@ -302,7 +302,7 @@ let client = APIClient(key: APIConfig.apiKey)
 
 
   <entry>
-  <title type="text">James' 10 Tips to Beat Anxiety</title>
+  <title type="text">James&apos; 10 Tips to Beat Anxiety</title>
   <link rel="alternate" type="text/html" href="http://localhost:3000/james-10-tips-to-beat-anxiety.html" />
   <id>http://localhost:3000/james-10-tips-to-beat-anxiety</id>
   <published>2018-12-20T00:00:00Z</published>
@@ -433,7 +433,7 @@ Like many people, I am incredibly busy and often find that free time is of the e
 
 
   <entry>
-  <title type="text">It's Okay to not be Okay</title>
+  <title type="text">It&apos;s Okay to not be Okay</title>
   <link rel="alternate" type="text/html" href="http://localhost:3000/its-okay-to-not-be-okay.html" />
   <id>http://localhost:3000/its-okay-to-not-be-okay</id>
   <published>2018-12-02T00:00:00Z</published>
